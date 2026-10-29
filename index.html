@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Игорь Виноградов — full-stack разработчик</title>
+<meta name="description" content="Портфолио Игоря Виноградова: сайты, боты для Telegram и MAX, мобильные приложения на Flutter и серверная часть на Python и Node.js.">
+<meta name="theme-color" content="#ececef">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://__DOMAIN__/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Игорь Виноградов — full-stack разработчик">
+<meta property="og:description" content="Сайты, боты, мобильные приложения и серверная часть. 17 проектов, из них три для реальных заказчиков.">
+<meta property="og:url" content="https://__DOMAIN__/">
+<meta property="og:image" content="https://__DOMAIN__/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/manrope-cyrillic-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Manrope";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/manrope-cyrillic-400-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/manrope-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/manrope-cyrillic-500-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/manrope-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/manrope-cyrillic-600-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/manrope-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/manrope-cyrillic-700-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/manrope-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:800;font-display:swap;src:url(fonts/manrope-cyrillic-800-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:800;font-display:swap;src:url(fonts/manrope-latin-800-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/jetbrains-mono-cyrillic-400-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/jetbrains-mono-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/jetbrains-mono-cyrillic-500-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/jetbrains-mono-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+/* Layout: личный сайт-витрина — центрированная навигация, крупные карточки работ с фильтрами, окно с подробностями проекта */
+:root{
+  --bg:#ececef; --card:#ffffff; --ink:#1b1b22; --muted:#686875; --line:#dcdce3;
+  --accent:#3a1cff; --accent-ink:#ffffff; --hl:#bff3a6; --hl-ink:#1b3b10; --shadow:0 1px 2px rgba(20,20,40,.06);
+  --f:"Manrope", "Segoe UI", system-ui, sans-serif; --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111115; --card:#1c1c22; --ink:#f0f0f4; --muted:#a3a3b2; --line:#2c2c35;
+  --accent:#8f80ff; --accent-ink:#0d0b24; --hl:#2c4f22; --hl-ink:#cdf7b8; --shadow:none; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111115; --card:#1c1c22; --ink:#f0f0f4; --muted:#a3a3b2; --line:#2c2c35;
+  --accent:#8f80ff; --accent-ink:#0d0b24; --hl:#2c4f22; --hl-ink:#cdf7b8; --shadow:none; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:16px;line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+h1,h2,h3{margin:0;text-wrap:balance;line-height:1.2}
+p{margin:0}
+a{color:var(--accent);text-underline-offset:3px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);margin:0 calc(-1 * max(16px, env(safe-area-inset-left, 0px)));padding:0 max(16px, env(safe-area-inset-left, 0px))}
+.top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-block:12px 4px}
+.logo{justify-self:center;width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-weight:800;font-size:15px;letter-spacing:-.02em;text-decoration:none}
+.top-l{display:flex;gap:6px;align-items:center}
+.top-r{justify-self:end;display:flex;gap:6px}
+.ib{width:38px;height:38px;border-radius:50%;border:0;background:transparent;display:grid;place-items:center;cursor:pointer;color:var(--ink);text-decoration:none}
+.ib:hover{background:var(--card)}
+.ib svg{width:20px;height:20px}
+nav.menu{display:flex;justify-content:center;gap:4px;flex-wrap:wrap;padding-block:6px 12px}
+nav.menu a{color:var(--ink);text-decoration:none;font-weight:600;font-size:16px;padding:6px 12px;border-radius:10px}
+nav.menu a:hover,nav.menu a.on{background:var(--card)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center;padding-block:48px 72px}
+.shots{position:relative;aspect-ratio:4/3;max-width:100%}
+.shot{position:absolute;border-radius:14px;overflow:hidden;background:var(--card);box-shadow:0 18px 40px rgba(20,20,50,.16);border:1px solid var(--line)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
+.shot .bar{height:22px;background:var(--card);border-bottom:1px solid var(--line);display:flex;gap:5px;align-items:center;padding-left:10px}
+.shot .bar i{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.shot.a{left:0;top:4%;width:78%;height:66%;transform:rotate(-2deg)}
+.shot.b{right:0;bottom:2%;width:64%;height:50%;transform:rotate(2.5deg)}
+.shot.a .img,.shot.b .img{height:calc(100% - 22px)}
+.tag-live{position:absolute;left:6%;bottom:8%;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;display:flex;gap:8px;align-items:center;box-shadow:var(--shadow)}
+.tag-live b{width:8px;height:8px;border-radius:50%;background:#22b05b;display:inline-block}
+.hero h1{font-size:clamp(28px,3.6vw,40px);font-weight:800;letter-spacing:-.02em}
+.hero h1 span{display:block}
+.u{background:linear-gradient(transparent 62%,var(--hl) 62%);padding:0 2px}
+.hero .lead{margin-top:22px;font-size:18px;max-width:46ch}
+.chip-hl{background:var(--hl);color:var(--hl-ink);padding:2px 8px;border-radius:8px;font-weight:600;white-space:nowrap}
+.cta{display:flex;flex-direction:column;gap:12px;margin-top:28px;align-items:flex-start}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;padding:11px 18px;border-radius:8px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer;text-decoration:none}
+.btn.o{background:transparent;color:var(--accent)}
+.btn svg{width:18px;height:18px}
+
+/* sections */
+section{padding-block:36px}
+.sh{text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center;margin-bottom:28px}
+.sh h2{font-size:clamp(24px,3vw,32px);font-weight:800;letter-spacing:-.02em}
+.sh p{color:var(--muted);max-width:60ch}
+
+/* filters */
+.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:20px;scrollbar-width:thin;justify-content:safe center}
+.filters button{flex:none;border:0;background:var(--card);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:var(--shadow)}
+.filters button sup{color:var(--accent);font-size:12px;margin-left:3px;top:-.35em;font-weight:700}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.filters button[aria-pressed="true"] sup{color:var(--hl)}
+
+/* cards */
+.works{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.w{background:var(--card);border-radius:20px;padding:8px;display:flex;flex-direction:column;cursor:pointer;border:0;text-align:left;box-shadow:var(--shadow);transition:transform .2s}
+.w:hover{transform:translateY(-3px)}
+.cv{position:relative;overflow:hidden}
+.w .cv{border-radius:14px;aspect-ratio:16/10}
+.w .cv img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
+.w .bd{padding:16px 12px 10px;display:flex;flex-direction:column;gap:8px;flex:1}
+.w .dt{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.w .dt .st{background:var(--bg);color:var(--ink);border-radius:6px;padding:1px 8px;font-weight:600}
+.w h3{font-size:20px;font-weight:700}
+.w p{color:var(--muted);font-size:15px;line-height:1.5}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
+.tags span{font-size:12.5px;border:1px solid var(--line);border-radius:6px;padding:1px 7px;color:var(--ink)}
+.tags span.c{background:var(--hl);color:var(--hl-ink);border-color:transparent;font-weight:600}
+.w.big{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+.w.big .cv{aspect-ratio:auto;min-height:340px}
+.w.big .bd{padding:24px}
+.w.big h3{font-size:28px}
+.w.big p{font-size:16px}
+
+/* covers */
+.cv.m{display:grid;place-items:center;padding:18px;background:var(--c1);color:var(--c2)}
+.m-chat{width:100%;max-width:300px;display:flex;flex-direction:column;gap:8px}
+.m-chat div{padding:8px 12px;border-radius:14px;font-size:13px;line-height:1.35;max-width:82%;background:rgba(255,255,255,.92);color:#1b1b22}
+.m-chat div.me{align-self:flex-end;background:var(--c2);color:var(--c3,var(--c1))}
+.m-phone{width:44%;max-width:150px;aspect-ratio:9/17;border-radius:20px;border:5px solid #0d0d12;background:#fff;padding:12px 9px;display:flex;flex-direction:column;gap:6px;color:#1b1b22;font-size:10px}
+.m-phone b{font-size:12px}
+.m-phone i{display:block;height:20px;border-radius:6px;background:var(--c1);opacity:.25}
+.m-phone i.s{background:var(--c1);opacity:1;height:28px}
+.m-big{font-family:var(--mono);font-weight:500;font-size:clamp(28px,4vw,44px);letter-spacing:-.03em;text-align:center;line-height:1.05}
+.m-big small{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-top:10px;opacity:.75}
+.m-grid{position:absolute;inset:0;background-image:linear-gradient(var(--c3) 1px,transparent 1px),linear-gradient(90deg,var(--c3) 1px,transparent 1px);background-size:28px 28px}
+.m-pin{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--c2);box-shadow:0 0 0 6px color-mix(in srgb,var(--c2) 30%,transparent)}
+.m-route{position:absolute;inset:18% 15%;border:3px dashed var(--c2);border-radius:40% 60% 50% 30%;opacity:.8}
+.m-table{width:100%;max-width:320px;background:#fff;border-radius:10px;overflow:hidden;font-size:11px;color:#1b1b22}
+.m-table div{display:grid;grid-template-columns:44px 1fr 1fr;border-top:1px solid #e6e6ec}
+.m-table div:first-child{border-top:0;background:var(--c2);color:#fff;font-weight:700}
+.m-table span{padding:5px 8px}
+.m-bars{display:flex;align-items:flex-end;gap:8px;height:60%;width:70%}
+.m-bars i{flex:1;background:var(--c2);border-radius:6px 6px 0 0}
+
+/* orgs */
+.orgs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.org{background:var(--card);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:4px;box-shadow:var(--shadow)}
+.org b{font-size:17px}
+.org span{color:var(--muted);font-size:14px}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.s{background:var(--card);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow)}
+.s .ico{width:44px;height:44px;border-radius:12px;background:var(--hl);color:var(--hl-ink);display:grid;place-items:center}
+.s .ico svg{width:22px;height:22px}
+.s h3{font-size:19px}
+.s p{color:var(--muted);font-size:15px;line-height:1.5}
+.s .ex{font-size:13.5px;color:var(--ink);margin-top:auto;padding-top:6px;border-top:1px solid var(--line)}
+
+/* resume */
+.cv-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px}
+.panel{background:var(--card);border-radius:20px;padding:28px;box-shadow:var(--shadow)}
+.panel h3{font-size:20px;margin-bottom:18px}
+.tl{display:flex;flex-direction:column;gap:20px}
+.tl div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px}
+.tl .y{font-size:13.5px;color:var(--muted);padding-top:2px;font-variant-numeric:tabular-nums}
+.tl b{display:block;font-size:16px}
+.tl p{color:var(--muted);font-size:15px;line-height:1.5}
+.sk{display:flex;flex-direction:column;gap:16px}
+.sk div{display:flex;flex-direction:column;gap:6px}
+.sk .l{font-size:13px;color:var(--muted);font-weight:600}
+.sk .tags{padding-top:0}
+.sk .tags span{font-size:14px;padding:3px 10px;border-radius:8px}
+
+/* contact */
+.contact{background:var(--ink);color:var(--bg);border-radius:24px;padding:clamp(24px,5vw,48px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center}
+.contact h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;letter-spacing:-.02em}
+.contact p{opacity:.75;margin-top:12px;max-width:44ch}
+.rows{display:flex;flex-direction:column;gap:10px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;background:color-mix(in srgb,var(--bg) 10%,transparent);border-radius:14px;padding:14px 16px;flex-wrap:wrap}
+.row span{opacity:.7;font-size:14px}
+.row b{font-weight:600;overflow-wrap:anywhere}
+.row a{color:inherit}
+.row button{border:0;background:var(--bg);color:var(--ink);border-radius:8px;padding:6px 12px;font-size:13px;font-weight:700;cursor:pointer}
+.toast{font-size:13px;opacity:.85;min-height:1.2em}
+footer{padding-block:28px 40px;text-align:center;color:var(--muted);font-size:14px}
+
+/* modal */
+.ov{position:fixed;inset:0;z-index:50;background:rgba(10,10,20,.55);display:flex;justify-content:center;align-items:flex-start;overflow-y:auto;padding:max(24px,env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+.md{background:var(--card);border-radius:24px;max-width:860px;width:100%;padding:10px;position:relative}
+.md .x{position:absolute;right:18px;top:18px;width:40px;height:40px;border-radius:50%;border:0;background:var(--card);cursor:pointer;display:grid;place-items:center;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.md .x svg{width:18px;height:18px}
+.md .cv{border-radius:16px;overflow:hidden;aspect-ratio:16/8}
+.md .cv img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
+.md .in{padding:24px 22px 18px;display:flex;flex-direction:column;gap:18px}
+.md h2{font-size:clamp(24px,3.4vw,32px);font-weight:800}
+.md .meta{display:flex;gap:8px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.md .meta span{background:var(--bg);border-radius:8px;padding:3px 10px}
+.md .meta span.st{background:var(--hl);color:var(--hl-ink);font-weight:600}
+.md h4{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.md ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.md li::marker{color:var(--accent)}
+.gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.gal img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+.links{display:flex;gap:10px;flex-wrap:wrap}
+
+@media (max-width:960px){
+  .hero{grid-template-columns:minmax(0,1fr);gap:28px;padding-block:24px 40px}
+  .hero .txt{order:-1}
+  .works{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .w.big{grid-template-columns:minmax(0,1fr)}.w.big .cv{min-height:0;aspect-ratio:16/10}
+  .svc{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cv-grid,.contact{grid-template-columns:minmax(0,1fr)}
+  .orgs{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:600px){
+  .works,.svc,.orgs,.gal{grid-template-columns:minmax(0,1fr)}
+  nav.menu a{font-size:15px;padding:5px 9px}
+  .tl div{grid-template-columns:1fr;gap:2px}
+  .w.big .bd{padding:16px 12px 10px}.w.big h3{font-size:22px}
+  .filters{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <div class="top-l">
+      <button class="ib" id="themeBtn" type="button" aria-label="Сменить тему"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+    </div>
+    <a class="logo" href="#top" aria-label="В начало">ИВ</a>
+    <div class="top-r">
+      <a class="ib" href="https://github.com/Alegro-s" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg></a>
+    </div>
+  </div>
+  <nav class="menu" aria-label="Разделы">
+    <a href="#top" class="on">Главное</a>
+    <a href="#works">Работы</a>
+    <a href="#services">Чем полезен</a>
+    <a href="#resume">Резюме</a>
+    <a href="#contact">Написать мне</a>
+  </nav>
+</div>
+
+<main class="wrap" id="top">
+
+<header class="hero">
+  <div class="shots" aria-hidden="true">
+    <div class="shot a"><div class="bar"><i></i><i></i><i></i></div><div class="img"><img src="img/opora-site.webp" alt=""></div></div>
+    <div class="shot b"><div class="bar"><i></i><i></i><i></i></div><div class="img"><img src="img/tc-trips.webp" alt=""></div></div>
+    <div class="tag-live"><b></b>lit-opora.ru работает</div>
+  </div>
+  <div class="txt">
+    <h1><span class="u">Full-stack разработчик</span><span>Игорь Виноградов</span></h1>
+    <p class="lead">Делаю сайты, ботов, мобильные приложения и серверную часть к ним. <span class="chip-hl" id="cnt">17 проектов</span> за последний год, из них три для реальных заказчиков. Посмотрите <a href="#works">мои работы</a> или <a href="#resume">резюме</a>.</p>
+    <div class="cta">
+      <a class="btn" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>Пригласить на собеседование</a>
+      <a class="btn o" href="#works"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Смотреть работы</a>
+    </div>
+  </div>
+</header>
+
+<section id="works">
+  <div class="sh"><h2>Работы</h2><p>Нажмите на карточку, чтобы открыть подробности: задачу, что я сделал, стек и ссылку на код.</p></div>
+  <div class="filters" id="filters" role="toolbar" aria-label="Фильтр работ"></div>
+  <div class="works" id="grid"></div>
+</section>
+
+<section>
+  <div class="sh"><h2>С кем работал</h2></div>
+  <div class="orgs">
+    <div class="org"><b>Минтранс Тульской области</b><span>Бот для жителей по автобусным перевозкам</span></div>
+    <div class="org"><b>ТГПУ им. Л. Н. Толстого</b><span>Мобильное приложение для студентов</span></div>
+    <div class="org"><b>ОПОРА</b><span>Сайт и рабочая система операционного центра</span></div>
+    <div class="org"><b>Обнинский хакатон 2026</b><span>Направление «Медицина», проект МасштабЛаб</span></div>
+    <div class="org"><b>«Точка сборки», Гигашкола</b><span>Хакатон, ИИ-агент для методистов</span></div>
+    <div class="org"><b>ВсОШ по искусственному интеллекту</b><span>Подготовка муниципального этапа, Тула</span></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="sh"><h2>Чем могу быть полезен</h2><p>Задачи, которые я уже делал сам от начала до запуска.</p></div>
+  <div class="svc">
+    <div class="s"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div><h3>Бэкенд и API</h3><p>REST API на FastAPI или Node.js, базы PostgreSQL и SQLite, авторизация по JWT, Docker и выкладка на VPS.</p><div class="ex">SMZ Platform, Расписание ИПИТ, МасштабЛаб</div></div>
+    <div class="s"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg></div><h3>Боты и мини-приложения</h3><p>Боты для Telegram и MAX, мини-приложения MAX, подключение GigaChat, админ-панели для сотрудников.</p><div class="ex">Минтранс, Бизнес.пульс, автопостинг</div></div>
+    <div class="s"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/></svg></div><h3>Сайты и интерфейсы</h3><p>Лендинги на React с формой заявок в Битрикс24, внутренние системы, админки и дашборды.</p><div class="ex">ОПОРА, Инфраструктура71, MedMid</div></div>
+    <div class="s"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div><h3>Мобильные приложения</h3><p>Приложения на Flutter для Android и iOS с подключением к своему серверу и офлайн-режимом.</p><div class="ex">ТГПУ Профиль, Neural Trust, SMZ Platform</div></div>
+  </div>
+</section>
+
+<section id="resume">
+  <div class="sh"><h2>Резюме</h2></div>
+  <div class="cv-grid">
+    <div class="panel">
+      <h3>Опыт и учёба</h3>
+      <div class="tl">
+        <div><span class="y">2026 — сейчас</span><div><b>Разработчик на проектах заказчиков</b><p>ОПОРА (сайт и система TransControl), Минтранс Тульской области (бот), ТГПУ (мобильное приложение). Общение с заказчиком, ТЗ, разработка и запуск.</p></div></div>
+        <div><span class="y">2026 — сейчас</span><div><b>Преподаватель колледжа</b><p>Читаю лекции по курсам «Графический дизайн и мультимедиа» и «Проектирование и разработка интерфейсов пользователя».</p></div></div>
+        <div><span class="y">2026 — сейчас</span><div><b>Магистратура, 1 курс</b><p>Дипломный проект «Рубеж»: система предотвращения сетевых атак с помощью ИИ.</p></div></div>
+        <div><span class="y">Октябрь 2026</span><div><b>Два хакатона</b><p>Обнинский хакатон (МасштабЛаб) и «Точка сборки» от Гигашколы (ИИ-методист).</p></div></div>
+        <div><span class="y">2026</span><div><b>Олимпиада по ИИ</b><p>Помогал готовить муниципальный этап ВсОШ по искусственному интеллекту в Туле, загружал задания в Яндекс Контест.</p></div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Навыки</h3>
+      <div class="sk">
+        <div><span class="l">Языки</span><div class="tags"><span>Python</span><span>JavaScript</span><span>TypeScript</span><span>Dart</span><span>SQL</span><span>C++ (базово)</span></div></div>
+        <div><span class="l">Бэкенд</span><div class="tags"><span>FastAPI</span><span>Node.js</span><span>Fastify</span><span>aiogram</span><span>SQLAlchemy</span><span>REST</span><span>JWT</span></div></div>
+        <div><span class="l">Фронтенд и мобильные</span><div class="tags"><span>React</span><span>Vite</span><span>Tailwind</span><span>Flutter</span><span>PWA</span></div></div>
+        <div><span class="l">Базы данных</span><div class="tags"><span>PostgreSQL</span><span>SQLite</span><span>Supabase</span><span>Prisma</span></div></div>
+        <div><span class="l">Инфраструктура</span><div class="tags"><span>Docker</span><span>Docker Compose</span><span>nginx</span><span>Linux VPS</span><span>Git</span></div></div>
+        <div><span class="l">Интеграции и ИИ</span><div class="tags"><span>Битрикс24</span><span>GigaChat</span><span>Ollama</span><span>Whisper</span><span>Яндекс Карты API</span><span>MAX</span><span>Telegram</span></div></div>
+        <div><span class="l">Ещё умею</span><div class="tags"><span>Писать ТЗ</span><span>Figma</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <div>
+      <h2>Ищу работу junior-разработчиком</h2>
+      <p>Готов к стажировке, испытательному сроку и тестовому заданию.</p>
+    </div>
+    <div class="rows">
+      <div class="row"><div><span>Почта</span><br><b id="mail">rozalityai@gmail.com</b></div><button type="button" id="copyMail">Скопировать</button></div>
+      <div class="row" id="tgRow" hidden><div><span>Telegram</span><br><b><a id="tgLink" target="_blank" rel="noopener"></a></b></div></div>
+      <div class="row"><div><span>GitHub</span><br><b><a href="https://github.com/Alegro-s" target="_blank" rel="noopener">github.com/Alegro-s</a></b></div></div>
+      <div class="toast" id="toast" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>Игорь Виноградов, Тула, 2026</footer>
+
+<div class="ov" id="ov" hidden>
+  <div class="md" role="dialog" aria-modal="true" aria-labelledby="mdTitle">
+    <button class="x" id="mdClose" type="button" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div id="mdBody"></div>
+  </div>
+</div>
+
+<script>
+var TELEGRAM = ""; // впишите ник без @, и строка появится в контактах
+var GH = "https://github.com/Alegro-s/";
+var CATS = {web:"Сайты и веб", bots:"Боты и MAX", mobile:"Мобильные", ai:"ИИ и данные", hack:"Хакатоны", client:"Для заказчиков", study:"Учёба и диплом"};
+
+var P = [
+ {id:"opora", feat:true, t:"ОПОРА и TransControl", d:"Октябрь 2026", c:["web","client"], st:"Сайт работает",
+  who:"Заказчик: ОПОРА, операционный центр перевозок, Тула",
+  s:"Сайт и рабочая система для центра, который ведёт перевозки транспортных компаний и их электронные документы.",
+  img:"img/opora-site.webp", gal:["img/tc-overview.webp","img/tc-trips.webp"],
+  task:"Компании нужен был сайт для заявок перевозчиков и внутренняя система, где операторы ведут каждую перевозку от заявки до доставки, включая электронные заказы (ЭЗЗ) и транспортные накладные (ЭТрН).",
+  did:["Сделал лендинг на React и Tailwind, заявки с формы принимает PHP-обработчик с проверкой полей и защитой от спама и передаёт их в Битрикс24.",
+       "Настроил сервер: nginx и php-fpm на VPS, где уже работают другие проекты, и скрипт выкладки в один клик.",
+       "Написал систему TransControl на Node.js и SQLite: этапы перевозки, роли сотрудников, вход с хешированием паролей, журнал действий, контроль сроков с эскалацией.",
+       "Подключил двустороннюю синхронизацию с Битрикс24 через вебхук и приём событий от операторов документооборота с защитой от дублей.",
+       "Собрал базу знаний по предметной области (ГИС ЭПД, 152-ФЗ, роуминг между операторами) и записал архитектурные решения."],
+  k:["React","Tailwind","PHP","Node.js","SQLite","nginx","Битрикс24"], links:[["Открыть сайт","https://lit-opora.ru"]]},
+
+ {id:"mintrans", t:"Бот Минтранса Тульской области", d:"2026", c:["bots","ai","client"], st:"Работает",
+  who:"Заказчик: Министерство транспорта Тульской области",
+  s:"Отвечает жителям на вопросы об автобусах и снимает нагрузку с колл-центра.",
+  mo:"chat", c1:"#1f6feb", c2:"#0b2b66", c3:"#ffffff", chat:["Как доехать до Московского вокзала?","Подскажу маршруты и ближайшие рейсы. Откуда поедете?","Вопрос передан сотруднику"],
+  task:"Жители звонят в колл-центр с одинаковыми вопросами о расписании и маршрутах. Нужен был бот, который отвечает сам, а сложные вопросы передаёт сотрудникам.",
+  did:["Сделал бота, который отвечает по подготовленной базе вопросов и ответов.",
+       "Подключил GigaChat: он определяет, о чём вопрос, и подбирает подходящий ответ.",
+       "Сделал админ-панель, куда попадают вопросы без ответа, чтобы сотрудники дополняли базу.",
+       "Пишу ТЗ на масштабирование на всю область: перенос в MAX, голосовой ввод и ответы, карта рейсов в мини-приложении."],
+  k:["Python","GigaChat","Админ-панель","MAX"], links:[]},
+
+ {id:"tspu", img:"img/tspu.webp", fit:"cover", pos:"center 22%", ibg:"#f1f1f4", t:"ТГПУ Профиль", d:"Май 2026", c:["mobile","bots","client"], st:"В разработке с командой",
+  who:"Для ТГПУ им. Л. Н. Толстого",
+  s:"Приложение для студентов: расписание, оценки, экзамены, портфолио и профиль.",
+  mo:"phone", c1:"#7a1f2b", c2:"#ffffff", ph:["Расписание","Пн, 2 пары","Оценки","Экзамены"],
+  task:"Университету нужно приложение, где студент видит всё про свою учёбу в одном месте, в том числе внутри мессенджера MAX.",
+  did:["Написал приложение на Flutter со слоями core, data, providers и ui и паттерном Repository.",
+       "Сделал вход через API, хранение токенов в защищённом хранилище и демо-вход без сервера.",
+       "Поднял серверную часть в Docker и собрал веб-версию приложения для мини-приложения MAX.",
+       "Готовлю для университета презентацию, дорожную карту по этапам и бюджет проекта."],
+  k:["Flutter","Dart","Provider","REST","Docker","MAX Mini App"], links:[["Код на GitHub",GH+"tsput_profile"]]},
+
+ {id:"pulse", img:"img/pulse.webp", fit:"contain", pos:"center", ibg:"#130a2c", t:"Бизнес.пульс", d:"Сентябрь 2026", c:["bots","web"], st:"MVP",
+  who:"Мини-приложение для MAX",
+  s:"Кабинет предпринимателя в MAX: налоги, штрафы, лицензии и уведомления от ведомств.",
+  mo:"chat", c1:"#ffb800", c2:"#2b1a00", chat:["Начислен НДС за III квартал: 48 200 ₽. Срок оплаты 28 октября.","Оплатить","Оплачено. Чек сохранён в кабинете."],
+  task:"Показать, как предприниматель может видеть все обязательства перед государством в одном мессенджере, не дожидаясь реальной интеграции с госсистемами.",
+  did:["Сделал бота и мини-приложение MAX со входом по подписи запуска и сессиями JWT.",
+       "Описал контракт интеграции с госсистемами и написал симулятор ведомств, который потом заменяется настоящим адаптером.",
+       "Сделал «госконсоль»: оператор запускает сценарии (НДС, штраф, требование ФНС, лицензия), и через несколько секунд они приходят предпринимателю.",
+       "Монорепозиторий на pnpm: API на Fastify с Prisma, мини-приложение и админка."],
+  k:["TypeScript","Fastify","Prisma","SQLite","MAX","JWT"], links:[["Код на GitHub",GH+"bisnes-pulse"]]},
+
+ {id:"infra71", img:"img/infra71.webp", fit:"cover", pos:"center", ibg:"#1d1f23", t:"Инфраструктура71", d:"Сентябрь 2026", c:["web"], st:"Прототип",
+  who:"Карта Тулы и области",
+  s:"Карта социальной инфраструктуры: стройки, жалобы жителей, маршруты и погода.",
+  mo:"map", c1:"#1d1f23", c2:"#cfff00", c3:"rgba(255,255,255,.06)",
+  task:"Собрать на одной карте объекты социальной инфраструктуры региона и дать жителям способ сообщать о проблемах прямо с карты.",
+  did:["Веб-интерфейс на React и Vite с Яндекс Картами и контурами из OpenStreetMap.",
+       "Жалобы с привязкой к точке на карте, построение маршрутов, погода через Open-Meteo.",
+       "API на FastAPI: вход, профиль, адреса. Роли жителя и сотрудника, загрузка данных из XLSX."],
+  k:["React","Vite","FastAPI","Яндекс Карты API","OpenStreetMap"], links:[["Код на GitHub",GH+"infrostruct71"]]},
+
+ {id:"neural", t:"Neural Trust", d:"Июнь 2026", c:["ai","mobile"], st:"Рабочий прототип",
+  who:"Корпоративный мессенджер",
+  s:"Мессенджер для компаний с многоуровневой защитой от мошенников, в том числе по голосу.",
+  mo:"big", c1:"#140f2e", c2:"#b4a6ff", big:"L1 — L6", small:"уровни проверки",
+  task:"Мошенники пишут сотрудникам от имени руководителя. Нужен мессенджер, который проверяет сообщения и голосовые на подделку и не отправляет переписку во внешние ИИ-сервисы.",
+  did:["Мобильный клиент на Flutter и сервер на FastAPI с PostgreSQL на VPS, отдельная админ-панель.",
+       "Свой ИИ-шлюз на компьютере с видеокартой: локальная языковая модель, распознавание речи Whisper, сравнение голоса с образцом пользователя.",
+       "Связал VPS с домашним компьютером через Tailscale или SSH-туннель и описал развёртывание по шагам."],
+  k:["Flutter","FastAPI","PostgreSQL","Whisper","LM Studio","Tailscale"], links:[["Код на GitHub",GH+"AVITO"]]},
+
+ {id:"raspiska", t:"Расписание ИПИТ", d:"Июнь 2026", c:["web","study"], st:"Курсовая, сдана",
+  who:"Курсовая работа",
+  s:"Веб-система, в которой преподаватели составляют расписание и выгружают его в Word, Excel и PDF.",
+  mo:"table", c1:"#e9eefc", c2:"#2747d6", rows:[["Пн","Базы данных","лекция"],["Пн","Веб-разработка","лаб."],["Вт","Алгоритмы","практика"],["Ср","Экзамен","ауд. 214"]],
+  task:"Расписание на факультете собирали вручную в таблицах. Нужно было сделать систему, где его можно составить мышкой и выгрузить в формате кафедры.",
+  did:["Составление расписания перетаскиванием, справочники преподавателей, предметов и групп.",
+       "Импорт из xlsx, xls, ods и docx, экспорт в xlsx, ods, docx и PDF по образцу кафедры.",
+       "React на фронтенде, FastAPI и PostgreSQL на сервере, Docker и nginx для выкладки."],
+  k:["React","FastAPI","PostgreSQL","Docker","nginx"], links:[["Код на GitHub",GH+"raspiska"]]},
+
+ {id:"scalelab", img:"img/scalelab.webp", fit:"cover", pos:"center", ibg:"#e9edf3", feat:true, t:"МасштабЛаб", d:"17 октября 2026", c:["hack","ai","web"], st:"Сдан на хакатоне",
+  who:"Обнинский хакатон 2026, направление «Медицина»",
+  s:"Измеряет площадь объектов на научных фотографиях по масштабной линейке.",
+  mo:"big", c1:"#0f3d3a", c2:"#c9fff4", big:"12,4 мм²", small:"площадь по фото",
+  task:"Кейс «Один масштаб»: исследователи вручную меряют площадь объектов на снимках. Нужно было сделать сервис, который делает это автоматически и выдаёт отчёт.",
+  did:["Ядро на Python: калибровка по масштабу, сегментация объекта, расчёт геометрии и формирование отчёта.",
+       "Шлюз на Node.js, PostgreSQL для данных и MongoDB для журнала событий.",
+       "Docker Compose с закрытой внутренней сетью: наружу открыт только веб через nginx. Есть режим запуска без интернета.",
+       "Тесты: pytest для ядра и сквозные тесты шлюза на настоящей базе. Плюс Android-приложение на Flutter."],
+  k:["Python","FastAPI","Node.js","PostgreSQL","MongoDB","Docker","Flutter"], links:[["Код на GitHub",GH+"ScaleLab"]]},
+
+ {id:"medmid", img:"img/medmid.webp", fit:"cover", pos:"center 62%", ibg:"#e6f6ef", t:"MedMid и медицинская серия", d:"Май 2026", c:["web","mobile"], st:"MVP",
+  who:"Для медицинских учреждений",
+  s:"CRM загруженности врачей, приложение для обучения медперсонала и приложение для реабилитации пациентов.",
+  mo:"bars", c1:"#e6f6ef", c2:"#14966a",
+  task:"Главврачу нужно видеть, насколько загружены сотрудники, и вовремя замечать перегрузку.",
+  did:["MedMid: дашборд с показателями, ввод нагрузки по дням, пороги предупреждений, отчёты в PDF и Excel.",
+       "Одна кодовая база работает как сайт, как приложение на телефоне (PWA) и как программа для Windows (Electron).",
+       "Данные и роли в Supabase. Отдельно сделал Flutter-приложения med_train и patient_rehab."],
+  k:["React","Supabase","PWA","Electron","Flutter"], links:[["MedMid",GH+"medmid"],["med_train",GH+"med_train"],["patient_rehab",GH+"patient_rehab"]]},
+
+ {id:"smz", t:"SMZ Platform", d:"2026", c:["mobile","web"], st:"MVP",
+  who:"Площадка поиска самозанятых",
+  s:"Работодатели публикуют смены, самозанятые откликаются из мобильного приложения.",
+  mo:"phone", c1:"#2b2b33", c2:"#ffffff", ph:["Смены рядом","Склад, 8 ч","Кафе, 6 ч","Отклик"],
+  task:"Сделать сервис, где один человек может быть и исполнителем, и заказчиком, а смены появляются в ленте сразу после публикации.",
+  did:["API на FastAPI и PostgreSQL, документация Swagger, тесты.",
+       "Вход по телефону, JWT с обновлением токена и переключением ролей в одном аккаунте.",
+       "Flutter-приложения для пользователя и партнёра с общими пакетами дизайна и клиента API, веб-админка.",
+       "Docker Compose для разработки и отдельная конфигурация для сервера."],
+  k:["Python","FastAPI","PostgreSQL","JWT","Flutter","Docker"], links:[]},
+
+ {id:"autopost", t:"Бот автопостинга", d:"Август 2026", c:["bots"], st:"Готов",
+  who:"Telegram и MAX",
+  s:"Публикует посты в каналы по расписанию. Один код работает в двух мессенджерах.",
+  mo:"chat", c1:"#229ed9", c2:"#ffffff", chat:["/new","Пост запланирован на 18:00 в канал «Новости»","Опубликовано в Telegram и MAX"],
+  task:"Нужно было заранее готовить посты и публиковать их по расписанию сразу в Telegram и MAX.",
+  did:["Бот на aiogram 3 с командами администратора и очередью постов.",
+       "Расписание на APScheduler, которое восстанавливается после перезапуска.",
+       "Отдельный клиент для MAX, синхронизация каналов, медиа и форматирование. Запуск в Docker."],
+  k:["Python","aiogram","SQLAlchemy","APScheduler","Docker"], links:[]},
+
+ {id:"metodist", t:"ИИ-методист", d:"Октябрь 2026", c:["hack","ai"], st:"MVP на хакатоне",
+  who:"Хакатон «Точка сборки», Гигашкола",
+  s:"ИИ-агент, который собирает образовательную программу по запросу методиста.",
+  mo:"big", c1:"#21d07a", c2:"#04230f", big:"Ollama", small:"локальная модель",
+  task:"Методисты тратят много времени на составление программ. Нужен агент, который делает черновик программы за них.",
+  did:["Собрал MVP на локальной языковой модели через Ollama на своём ноутбуке.",
+       "Подготовил продуктовый бриф для жюри: для кого продукт, какую проблему решает и как это проверить."],
+  k:["Python","Ollama","LLM"], links:[]},
+
+ {id:"slam", img:"img/slam.webp", fit:"cover", pos:"center top", ibg:"#111", t:"Визуальная одометрия", d:"Октябрь 2025", c:["ai","study"], st:"Учебный проект",
+  who:"Компьютерное зрение",
+  s:"По видео с камеры восстанавливает траекторию движения и строит 3D-карту точек.",
+  task:"По последовательности снимков из открытого датасета EuRoC (MH_02) определить, как двигалась камера.",
+  did:["Написал обработчик на Python: поиск особых точек на кадрах, сопоставление между кадрами, оценка движения камеры с учётом её калибровки.",
+       "Сделал веб-интерфейс: прогресс обработки видео, 3D-вид траектории и точек карты, кадр с отслеживаемыми точками."],
+  k:["Python","OpenCV","NumPy","Matplotlib"], links:[["Код на GitHub",GH+"pySLAMbakT"]]},
+
+ {id:"rubezh", t:"Рубеж", d:"2026 — 2028", c:["ai","study"], st:"Дипломный проект",
+  who:"Магистерская диссертация",
+  s:"Система предотвращения сетевых атак: два ИИ-агента учатся друг против друга.",
+  mo:"big", c1:"#2a0f12", c2:"#ff8a7a", big:"Red vs Blue", small:"кибер-полигон",
+  task:"Тема: «Разработка системы по предотвращению сетевых атак за счёт искусственного интеллекта».",
+  did:["Изолированный полигон в Docker, где атакующий агент и защищающийся агент обучаются с подкреплением друг против друга.",
+       "Используются только легальные открытые датасеты, это согласовано с этическим комитетом университета.",
+       "Интерфейс полигона называется «Рубеж»."],
+  k:["Python","Docker","Reinforcement Learning"], links:[]},
+
+ {id:"roza", t:"Roza", d:"Сентябрь 2026", c:["ai"], st:"Работает",
+  who:"Личный инструмент",
+  s:"Планировщик в командной строке: собирает дела из почты и выписки и строит план дня.",
+  mo:"big", c1:"#ffe3ec", c2:"#b0144a", big:"план дня", small:"по формуле приоритета",
+  task:"Собрать входящие задачи из разных мест в один список и каждое утро получать понятный план.",
+  did:["Чтение почты по IMAP только на просмотр и разбор банковской выписки CSV.",
+       "Быстрый ввод вроде «Оплатить интернет завтра ! ~10м #дом».",
+       "Формула приоритета: срочность, важность и быстрые задачи, плюс матрица Эйзенхауэра. Без внешних библиотек, с тестами."],
+  k:["Python","SQLite","IMAP"], links:[]},
+
+ {id:"cleanslate", t:"Clean Slate", d:"2026", c:["study"], st:"Расширение готово",
+  who:"Для преподавателей программирования",
+  s:"Расширение VS Code для экзаменов: отмечает крупные вставки чужого или сгенерированного кода.",
+  mo:"big", c1:"#101418", c2:"#7ee2ff", big:"+ 84 строки", small:"вставка отмечена",
+  task:"На экзаменах студенты вставляют готовый код. Нужно не запрещать ИИ, а видеть, откуда взялся код и разобрался ли в нём студент.",
+  did:["Описал протокол: журнал происхождения кода, проверка понимания, итоговый отчёт для преподавателя.",
+       "Сделал расширение VS Code и CLI на TypeScript, собрал установочный файл расширения."],
+  k:["TypeScript","VS Code API","JSON Schema"], links:[]},
+
+ {id:"waypoint", t:"Экосистема Waypoint", d:"Июнь 2026", c:["web"], st:"Сайт работает",
+  who:"Несколько продуктов на своих доменах",
+  s:"Монорепозиторий нескольких сервисов с общим развёртыванием на сервере.",
+  mo:"big", c1:"#34b67a", c2:"#04271a", big:"Waypoint", small:"четыре домена",
+  task:"Держать несколько связанных продуктов в одном репозитории и выкладывать их на сервер одной командой.",
+  did:["Главный сайт, облачный сервис аналитики и десктоп-клиент, у каждого свой домен.",
+       "Локальный запуск всей экосистемы в Docker и единый скрипт развёртывания на сервере."],
+  k:["Docker","nginx","Node.js","Flutter"], links:[["Открыть сайт","https://waypointclub.ru"],["Код на GitHub",GH+"redisant"]]}
+];
+
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function cover(p){
+  if(p.img) return '<div class="cv"'+(p.ibg?' style="background:'+p.ibg+'"':'')+'><img src="'+p.img+'" alt="'+esc(p.t)+'" loading="lazy"'+(p.fit?' style="object-fit:'+p.fit+';object-position:'+p.pos+'"':'')+'></div>';
+  var st='style="--c1:'+p.c1+';--c2:'+p.c2+(p.c3?';--c3:'+p.c3:'')+'"', h='';
+  if(p.mo==="chat") h='<div class="m-chat">'+p.chat.map(function(m,i){return '<div class="'+(i%2?'':'me')+'">'+esc(m)+'</div>'}).join('')+'</div>';
+  else if(p.mo==="phone") h='<div class="m-phone"><b>'+esc(p.ph[0])+'</b><i class="s"></i><span>'+esc(p.ph[1])+'</span><i></i><span>'+esc(p.ph[2])+'</span><i></i><span>'+esc(p.ph[3])+'</span><i></i></div>';
+  else if(p.mo==="big") h='<div class="m-big">'+esc(p.big)+'<small>'+esc(p.small)+'</small></div>';
+  else if(p.mo==="map") h='<div class="m-grid"></div><div class="m-route"></div><span class="m-pin" style="left:24%;top:30%"></span><span class="m-pin" style="left:62%;top:22%"></span><span class="m-pin" style="left:46%;top:64%"></span><span class="m-pin" style="left:78%;top:70%"></span>';
+  else if(p.mo==="table") h='<div class="m-table"><div><span>День</span><span>Предмет</span><span>Тип</span></div>'+p.rows.map(function(r){return '<div><span>'+r.map(esc).join('</span><span>')+'</span></div>'}).join('')+'</div>';
+  else if(p.mo==="bars") h='<div class="m-bars"><i style="height:45%"></i><i style="height:70%"></i><i style="height:55%"></i><i style="height:92%"></i><i style="height:62%"></i><i style="height:38%"></i></div>';
+  return '<div class="cv m" '+st+'>'+h+'</div>';
+}
+function card(p){
+  var tags=(p.c.indexOf("client")>-1?'<span class="c">Заказчик</span>':'')+p.k.slice(0,4).map(function(k){return '<span>'+esc(k)+'</span>'}).join('');
+  return '<button class="w'+(p.feat&&cur==="all"?' big':'')+'" type="button" data-id="'+p.id+'">'+cover(p)+
+   '<div class="bd"><div class="dt"><span class="st">'+esc(p.st)+'</span><span>'+esc(p.d)+'</span></div><h3>'+esc(p.t)+'</h3><p>'+esc(p.s)+'</p><div class="tags">'+tags+'</div></div></button>';
+}
+var cur="all";
+function renderFilters(){
+  var f=document.getElementById("filters"), h='<button type="button" data-f="all" aria-pressed="'+(cur==="all")+'">Все<sup>'+P.length+'</sup></button>';
+  Object.keys(CATS).forEach(function(k){var n=P.filter(function(p){return p.c.indexOf(k)>-1}).length; if(n) h+='<button type="button" data-f="'+k+'" aria-pressed="'+(cur===k)+'">'+CATS[k]+'<sup>'+n+'</sup></button>'});
+  f.innerHTML=h;
+}
+function render(){
+  document.getElementById("grid").innerHTML=P.filter(function(p){return cur==="all"||p.c.indexOf(cur)>-1}).map(card).join('');
+  renderFilters();
+}
+document.getElementById("filters").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;cur=b.dataset.f;render()});
+document.getElementById("grid").addEventListener("click",function(e){var b=e.target.closest(".w");if(b)location.hash="p-"+b.dataset.id});
+
+var ov=document.getElementById("ov"), lastFocus=null;
+function openP(id){
+  var p=P.filter(function(x){return x.id===id})[0]; if(!p) return;
+  var gal=p.gal?'<div><h4>Внутренняя система</h4><div class="gal">'+p.gal.map(function(g){return '<img src="'+g+'" alt="Экран системы '+esc(p.t)+'" loading="lazy">'}).join('')+'</div></div>':'';
+  var links=p.links.length?'<div class="links">'+p.links.map(function(l){return '<a class="btn'+(l[1].indexOf("github")>-1?' o':'')+'" href="'+l[1]+'" target="_blank" rel="noopener">'+esc(l[0])+'</a>'}).join('')+'</div>':'';
+  document.getElementById("mdBody").innerHTML=cover(p)+'<div class="in"><div class="meta"><span class="st">'+esc(p.st)+'</span><span>'+esc(p.d)+'</span><span>'+esc(p.who)+'</span></div><h2 id="mdTitle">'+esc(p.t)+'</h2>'+
+   '<div><h4>Задача</h4><p>'+esc(p.task)+'</p></div><div><h4>Что я сделал</h4><ul>'+p.did.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul></div>'+gal+
+   '<div><h4>Стек</h4><div class="tags">'+p.k.map(function(k){return '<span>'+esc(k)+'</span>'}).join('')+'</div></div>'+links+'</div>';
+  lastFocus=document.activeElement; ov.hidden=false; document.body.style.overflow="hidden"; ov.scrollTop=0; document.getElementById("mdClose").focus();
+}
+function closeP(){ov.hidden=true;document.body.style.overflow="";if(location.hash.indexOf("#p-")===0)history.replaceState(null,"",location.pathname+location.search);if(lastFocus)lastFocus.focus()}
+function route(){var h=location.hash.slice(1); if(h.indexOf("p-")===0) openP(h.slice(2)); else if(!ov.hidden) closeP()}
+window.addEventListener("hashchange",route);
+document.getElementById("mdClose").addEventListener("click",closeP);
+ov.addEventListener("click",function(e){if(e.target===ov)closeP()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!ov.hidden)closeP()});
+
+// theme
+var root=document.documentElement;
+try{var t=localStorage.getItem("theme");if(t)root.setAttribute("data-theme",t)}catch(e){}
+document.getElementById("themeBtn").addEventListener("click",function(){
+  var dark=root.getAttribute("data-theme")?root.getAttribute("data-theme")==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+  var n=dark?"light":"dark"; root.setAttribute("data-theme",n); try{localStorage.setItem("theme",n)}catch(e){}
+});
+
+// nav highlight
+var links=[].slice.call(document.querySelectorAll("nav.menu a"));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+window.addEventListener("scroll",function(){var y=scrollY+160,i=0;secs.forEach(function(s,k){if(s&&s.offsetTop<=y)i=k});links.forEach(function(a,k){a.classList.toggle("on",k===i)})},{passive:true});
+
+// contacts
+if(TELEGRAM){var tl=document.getElementById("tgLink");tl.href="https://t.me/"+TELEGRAM;tl.textContent="@"+TELEGRAM;document.getElementById("tgRow").hidden=false}
+document.getElementById("copyMail").addEventListener("click",function(){
+  var m=document.getElementById("mail"),toast=document.getElementById("toast");
+  function fb(){var r=document.createRange();r.selectNodeContents(m);var s=getSelection();s.removeAllRanges();s.addRange(r);toast.textContent="Адрес выделен, нажмите Ctrl+C"}
+  try{navigator.clipboard.writeText(m.textContent).then(function(){toast.textContent="Почта скопирована"},fb)}catch(e){fb()}
+});
+document.getElementById("cnt").textContent=P.length+" проектов";
+render(); route();
+</script>
+</body>
+</html>

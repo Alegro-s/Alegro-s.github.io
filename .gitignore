@@ -1,0 +1,5 @@
+deploy/deploy-settings.json
+deploy/github-settings.json
+_site/
+.DS_Store
+Thumbs.db
